@@ -106,11 +106,11 @@ export const StartGame: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-2 flex flex-col items-center">
+    <div className="p-2 flex h-full flex-col items-center">
       <h1 className="bg-background  text-2xl  mx-3 px-5 text-white py-8 text-center rounded shadow-lg">
         Alles für dein perfektes Krimi Dinner{" "}
       </h1>
-      <div className="mt-20 pt-10 px-5 w-full h-[65vh] flex flex-col mx-3 bg-white/0 justify-center items-center relative ">
+      <div className="mt-20 pt-10 px-5 w-full bg-[red]/0 flex-1 h-[65vh] flex flex-col mx-3 bg-white/0 justify-center items-center relative ">
         <div className={"flex-1"}>
           <AlertBox
             img={REZEPTE}

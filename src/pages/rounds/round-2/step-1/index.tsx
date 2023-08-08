@@ -34,23 +34,24 @@ export default ({setIsNextRound, isNextRound}) => {
   }, []);
 
   return (
-    <div className="flex bg-white/0">
+    <div className="flex h-full py-2 bg-white/10">
       <Box
         sx={{
           // bgcolor: "#cfe8fc",
-          height: "95vh",
+          // height: "95vh",
           flex: 1,
           display: "flex",
-          justifyContent: "center",
+          // justifyContent: "center",
           flexDirection: "column",
           // paddingTop: "10rem",
           alignItems: "center",
           // alignItems: "end",
+
         }}
       >
-        <Box sx={{ height: "90vh" }}>
+        <Box sx={{ flex:1 }}>
           <div>
-            <h1 className="bg-background  text-2xl mt-2 border-white/50 border-[1px]  mx-3 px-5 text-white py-8 text-center rounded shadow-lg">
+            <h1 className="bg-background  text-2xl border-white/50 border-[1px] mx-3 px-5 text-white py-8 text-center rounded shadow-lg">
               Wer wurde erschossen?{" "}
             </h1>
             <Box sx={{ flexGrow: 1, mt: "2rem", padding: "1.2rem" }}>
@@ -84,10 +85,10 @@ export default ({setIsNextRound, isNextRound}) => {
           </div>
         </Box>
 
-        <Box className="mb-0 sm:mb-10">
+        <Box className=" mb-2">
           <Button
            onClick={()=>setIsNextRound(2)}
-            variant="text"
+            variant="outlined"
             className="disabled:cursor-not-allowed rounded-[4px] bg-[#f24b59] text-[#000] border-white/10 border-[1px]"
             type="submit"
           >

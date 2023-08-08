@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AppRoutes } from "@/constants/app-routes";
 import * as fbq from "@/meta";
 
-export const SplashScreen: React.FC = () => {
+export const InviteScreen: React.FC = () => {
   const navigate = useNavigate();
 
   // Emit a page view event to Meta Pixel
@@ -14,7 +14,7 @@ export const SplashScreen: React.FC = () => {
 
   useEffect(() => {
     setTimeout(()=>{
-        navigate(AppRoutes.home)
+        navigate(AppRoutes.family_dinner)
       },2000)
   }, []);
 

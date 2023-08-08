@@ -136,12 +136,12 @@ export const ExtraOptions: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-2 flex flex-col items-center">
+    <div className="p-2 flex flex-col h-full items-center">
       <h1 className="bg-background  text-2xl  mx-3 px-5 text-white py-8 text-center rounded shadow-lg">
         Alles für dein perfektes Krimi Dinner{" "}
       </h1>
-      <div className="mt-20 px-5 w-full flex mx-3  flex-col justify-center items-center">
-        <div className={""}>
+      <div className="mt-20 px-5 w-full bg-red-300s flex-1 flex mx-3  flex-col justify-center items-center">
+        <div className={"flex-1"}>
           <ExtraOptionsCard
             img={REZEPTE}
             title={"Rezepte"}

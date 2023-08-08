@@ -66,13 +66,13 @@ export const Setup: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-2">
-      <h1 className="bg-background text-2xl text-white py-8 text-center rounded shadow-lg">
+    <div className="p-2 h-[100%] bg-slate-600/1 flex flex-col ">
+      <h1 className="bg-background text-2xl text-white/1 py-8 text-center rounded shadow-lg">
         VORBEREITUNGEN
       </h1>
 
-      <div className="mt-24 px-4">
-        <div className="space-y-8">
+      <div className="mt-24 px-4 flex-1 bg-red-300/1 flex flex-col">
+        <div className="space-y-8 flex-1 bg-slate-4001 ">
           <InputGroup
             type="text"
             placeholder="Name"

@@ -12,6 +12,10 @@ import Box from "@mui/joy/Box";
 import Typography from "@mui/joy/Typography";
 import Card from "@mui/joy/Card";
 
+import man_1 from "@/assets/man1.png";
+import man_2 from "@/assets/man2.png";
+import man_3 from "@/assets/man3.png";
+
 const useStyles = makeStyles((theme) => ({
   ratingContainer: {
     "& label.Mui-focused": {
@@ -40,57 +44,63 @@ const useStyles = makeStyles((theme) => ({
 
 const data = [
   {
-    src: "https://images.unsplash.com/photo-1502657877623-f66bf489d236",
+    src: man_1,
+    // src: "https://images.unsplash.com/photo-1502657877623-f66bf489d236",
     title: "Night view",
     description: "4.21M views",
   },
   {
-    src: "https://images.unsplash.com/photo-1527549993586-dff825b37782",
+    src: man_2,
+    // src: "https://images.unsplash.com/photo-1527549993586-dff825b37782",
     title: "Lake view",
     description: "4.74M views",
   },
   {
-    src: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
+    src: man_3,
+    // src: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
     title: "Mountain view",
     description: "3.98M views",
   },
   {
-    src: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
+    src: man_1,
+    // src: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
     title: "Mountain view",
     description: "3.98M views",
   },
   {
-    src: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
+    src: man_2,
+    // src: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
     title: "Mountain view",
     description: "3.98M views",
   },
   {
-    src: "https://images.unsplash.com/photo-1502657877623-f66bf489d236",
+    src: man_3,
+    // src: "https://images.unsplash.com/photo-1502657877623-f66bf489d236",
     title: "Night view",
     description: "4.21M views",
   },
   {
-    src: "https://images.unsplash.com/photo-1527549993586-dff825b37782",
+    src: man_1,
+    // src: "https://images.unsplash.com/photo-1527549993586-dff825b37782",
     title: "Lake view",
     description: "4.74M views",
   },
   {
-    src: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
+    src: man_2,
     title: "Mountain view",
     description: "3.98M views",
   },
   {
-    src: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
+    src: man_3,
     title: "Mountain view",
     description: "3.98M views",
   },
   {
-    src: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
+    src: man_1,
     title: "Mountain view",
     description: "3.98M views",
   },
 ];
-
 function CarouselRatio() {
   return (
     <Box
@@ -110,17 +120,18 @@ function CarouselRatio() {
       {data.map((item) => (
         <Card
           orientation="horizontal"
-          size="sm"
+          size="md"
           key={item.title}
           variant="outlined"
           sx={{ padding: 0, border: 0, borderRadius: 100 }}
         >
-          <AspectRatio ratio="1" sx={{ minWidth: 50, padding: 0 }}>
+          <AspectRatio ratio="1" sx={{ minWidth: 61, padding: 0 }}>
             <img
-              src={`${item.src}?h=120&fit=crop&auto=format`}
-              srcSet={`${item.src}?h=120&fit=crop&auto=format&dpr=2 2x`}
+             src={item.src}
+              // src={`${item.src}?h=120&fit=crop&auto=format`}
+              // srcSet={`${item.src}?h=120&fit=crop&auto=format&dpr=2 2x`}
               alt={item.title}
-              className={"h-[40px] w-[40px]"}
+              className={"h-[60px] w-[60px]"}
             />
           </AspectRatio>
         </Card>
@@ -157,9 +168,9 @@ export const Characters: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: "ce",
             padding: "0rem 0rem",
-            paddingBottom: "2rem",
+            // paddingBottom: "2rem",
             background: "#383838",
             mt: 10,
 
@@ -170,26 +181,29 @@ export const Characters: React.FC = () => {
             sx={{
               fontFamily: "Roboto",
               fontWeight: 400,
-              fontSize: "16px",
+              fontSize: "24px",
               textAlign: "center",
               color: "#f24b59",
               background: "rgba(41, 41, 41, 1)",
               width: "100%",
               padding: "20px 0",
+              letterSpacing:"0.18px",
             }}
           >
             Luigi Bastoni{" "}
           </Typography>
-          <div>
+          <div className={"bg-red-0 flex-1 flex justify-center items-center flex-col"} >
             <Typography
               sx={{
+
                 fontFamily: "Roboto",
                 fontWeight: 400,
                 fontSize: "14px",
                 margin: 0,
                 textAlign: "center",
-                padding: "0 1rem",
-                color: "rgba(255, 255, 255, 0.6)",
+                padding: "0 2.2rem",
+                color: "rgba(255, 255, 255, 0.87)",
+
               }}
             >
               Bruder des Dons und ewiger Zweiter. Alternder Playboy, der gerne
@@ -199,12 +213,12 @@ export const Characters: React.FC = () => {
               sx={{
                 fontFamily: "Roboto",
                 fontWeight: 400,
-                padding: "0 1rem",
+                padding: "0 2.2rem",
                 fontSize: "14px",
                 margin: 0,
-                marginTop: 1,
+                marginTop: 2,
                 textAlign: "center",
-                color: "rgba(255, 255, 255, 0.6)",
+                color: "rgba(255, 255, 255, 0.87)",
               }}
             >
               Luigi ist ein sehr lockerer Mensch und meistens gut gelaunt.
@@ -214,7 +228,7 @@ export const Characters: React.FC = () => {
             </Typography>
           </div>
 
-          <Typography
+          {/* <Typography
             sx={{
               fontFamily: "Roboto",
               fontWeight: 400,
@@ -225,7 +239,7 @@ export const Characters: React.FC = () => {
             }}
           >
             Speichern{" "}
-          </Typography>
+          </Typography> */}
         </Card>
       </Box>
       <Box
@@ -240,22 +254,25 @@ export const Characters: React.FC = () => {
 
       <Box
         sx={{
-          height: 100,
+          width:"100%",
+          // height: 100,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          padding:"1rem 2rem 0 2rem"
+          // background:"red"
         }}
       >
         <Button
-          onClick={() => setIsNextRound(2)}
+          // onClick={() => setIsNextRound(2)}
           variant="text"
           className="disabled:cursor-not-allowed rounded-[4px]  "
           type="submit"
         >
-          WEITER
+          ZURUCK
         </Button>
         <Button
-          onClick={() => setIsNextRound(2)}
+          // onClick={() => setIsNextRound(2)}
           variant="text"
           className="disabled:cursor-not-allowed rounded-[4px]  "
           type="submit"

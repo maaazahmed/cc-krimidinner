@@ -19,4 +19,7 @@ export { Characters2 } from "./characters-2"
 export { FamilyDinner } from "./familie-dinner"
 export { YourCharacter } from "./your-character"
 
+export { CharactersProfile } from "./characters-profile"
 
+export { TestPage } from "./test";
+export { InviteScreen } from "./invite-screen";

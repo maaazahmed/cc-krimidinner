@@ -15,10 +15,9 @@ export const RoundTwo: React.FC = ({}) => {
   }, []);
 
   return !isNextRound ? (
-    <div className="flex bg-white/0">
+    <div className="flex bg-white/0 h-full py-3">
       <Box
         sx={{
-          height: "95vh",
           flex: 1,
           display: "flex",
           justifyContent: "center",
@@ -26,9 +25,9 @@ export const RoundTwo: React.FC = ({}) => {
           alignItems: "center",
         }}
       >
-        <Box sx={{ height: "90vh" }}>{/* <Step1 /> */}</Box>
+        <Box sx={{ flex:1 }}>{/* <Step1 /> */}</Box>
 
-        <Box className="mb-0 sm:mb-10">
+        <Box className="">
           <Button
             onClick={() => setIsNextRound(1)}
             variant="text"
@@ -41,7 +40,7 @@ export const RoundTwo: React.FC = ({}) => {
       </Box>
     </div>
   ) : (
-    <Box sx={{ height: "95vh", }}>
+    <Box sx={{ height:"100%", width:"100%"}}>
       {isNextRound == 1 ? (
         <Step1 isNextRound={isNextRound} setIsNextRound={setIsNextRound} />
       ) : isNextRound == 2 ? (

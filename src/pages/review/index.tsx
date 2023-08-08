@@ -7,6 +7,8 @@ import crime_classes_img from "@/assets/crime-classes-img.png";
 import Rating from "@mui/material/Rating";
 import { Button } from "@/components/button";
 import TextField from "@mui/material/TextField";
+import { useNavigate } from "react-router-dom";
+import { AppRoutes } from "@/constants/app-routes";
 
 const useStyles = makeStyles((theme) => ({
   ratingContainer: {
@@ -37,6 +39,8 @@ const useStyles = makeStyles((theme) => ({
 export const ReviewComment: React.FC = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState<number | null>(2);
+  const navigate = useNavigate();
+
 
   return (
     <div className="p-2 bg-[#fff]/10 h-[95vh] flex flex-col items-center">
@@ -129,8 +133,10 @@ export const ReviewComment: React.FC = () => {
               fontSize: "16px",
               textAlign: "center",
               color: "#F24B59",
-              textTransform:"uppercase"
+              textTransform:"uppercase",
+              cursor:"pointer"
             }}
+            onClick={()=> navigate(AppRoutes.invite_page)}
           >
             Speichern{" "}
           </Typography>

@@ -24,7 +24,7 @@ import {
 import * as Yup from "yup";
 import { timeNowInSec } from "@/utils";
 import { setLogDoc } from "@/firebase/logs";
-
+import Box from "@mui/joy/Box";
 interface FormValues {
   player1: Player;
   player2: Player;
@@ -116,18 +116,20 @@ export const AddPlayers: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-2 flex flex-col items-center">
-      <h1 className="bg-background text-2xl w-full  text-white py-8 text-center rounded shadow-lg">
+    <div className="p-2 flex h-[100%]  flex-col ">
+      <h1 className="bg-background text-2xl w-full   text-white py-8 text-center rounded shadow-lg">
         VORBEREITUNGEN
       </h1>
 
-      <div className="mt-20 px-4 w-full">
-        <div className="space-y-8 w-full flex flex-col align-center">
+      <div className="mt-24 px-4 w-full  flex-1 bg-slate-600/0">
+        <div className="space-y-8 w-full flex flex-col align-center h-full bg-red-600/0 flex-1 ">
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
             enableReinitialize={true}
-            onSubmit={handleSubmit}>
+            onSubmit={handleSubmit}
+            // className="flex-1"
+          >
             {({
               isValid,
               handleChange,
@@ -136,66 +138,66 @@ export const AddPlayers: React.FC = () => {
               touched,
               isSubmitting,
             }) => (
-              <Form>
-                <InputGroup
-                  placeholder="Name"
-                  name="player1.name"
-                  handleChange={handleChange}
-                  handleBlur={handleBlur}
-                  errors={errors.player1?.name}
-                  touched={touched.player1?.name}
-                />
+              <Form className="h-full flex-1 flex flex-col  ">
+                <Box sx={{flex:1}} >
+                  <InputGroup
+                    placeholder="Name"
+                    name="player1.name"
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    errors={errors.player1?.name}
+                    touched={touched.player1?.name}
+                  />
 
-                <InputGroup
-                  placeholder="Name"
-                  name="player2.name"
-                  handleChange={handleChange}
-                  handleBlur={handleBlur}
-                  errors={errors.player2?.name}
-                  touched={touched.player2?.name}
-                />
+                  <InputGroup
+                    placeholder="Name"
+                    name="player2.name"
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    errors={errors.player2?.name}
+                    touched={touched.player2?.name}
+                  />
 
-                <InputGroup
-                  placeholder="Name"
-                  name="player3.name"
-                  handleChange={handleChange}
-                  handleBlur={handleBlur}
-                  errors={errors.player3?.name}
-                  touched={touched.player3?.name}
-                />
+                  <InputGroup
+                    placeholder="Name"
+                    name="player3.name"
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    errors={errors.player3?.name}
+                    touched={touched.player3?.name}
+                  />
 
-                <InputGroup
-                  placeholder="Name"
-                  name="player4.name"
-                  handleChange={handleChange}
-                  handleBlur={handleBlur}
-                  errors={errors.player4?.name}
-                  touched={touched.player4?.name}
-                />
+                  <InputGroup
+                    placeholder="Name"
+                    name="player4.name"
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    errors={errors.player4?.name}
+                    touched={touched.player4?.name}
+                  />
 
-                <InputGroup
-                  placeholder="Name"
-                  fieldLabel="Optional"
-                  name="player5.name"
-                  handleChange={handleChange}
-                  handleBlur={handleBlur}
-                  errors={errors.player5?.name}
-                  touched={touched.player5?.name}
-                />
+                  <InputGroup
+                    placeholder="Name"
+                    fieldLabel="Optional"
+                    name="player5.name"
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    errors={errors.player5?.name}
+                    touched={touched.player5?.name}
+                  />
 
-                <InputGroup
-                  placeholder="Name"
-                  fieldLabel="Optional"
-                  name="player6.name"
-                  handleChange={handleChange}
-                  handleBlur={handleBlur}
-                  errors={errors.player6?.name}
-                  touched={touched.player6?.name}
-                />
+                  <InputGroup
+                    placeholder="Name"
+                    fieldLabel="Optional"
+                    name="player6.name"
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    errors={errors.player6?.name}
+                    touched={touched.player6?.name}
+                  />
+                </Box>
 
                 <div className="flex w-full items-center justify-center">
-                  {" "}
-                  {/* Added justify-center */}
                   <div className="text-center flex border-red-50 w-1/2 justify-between mt-8">
                     <Button
                       onClick={() => {
@@ -203,14 +205,16 @@ export const AddPlayers: React.FC = () => {
                       }}
                       variant="text"
                       className="disabled:cursor-not-allowed"
-                      type="button">
+                      type="button"
+                    >
                       ZUrück
                     </Button>
                     <Button
                       variant="text"
                       className="disabled:cursor-not-allowed"
                       disabled={!isValid || isSubmitting}
-                      type="submit">
+                      type="submit"
+                    >
                       WEITER
                     </Button>
                   </div>
@@ -270,7 +274,8 @@ const InputGroup: React.FC<InputGroupProps> = ({
       {fieldLabel && (
         <label
           htmlFor={id}
-          className="text-onSurface-mediumEmphasis block text-xs mt-1.5">
+          className="text-onSurface-mediumEmphasis block text-xs mt-1.5"
+        >
           {fieldLabel}
         </label>
       )}

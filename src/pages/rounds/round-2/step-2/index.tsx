@@ -213,23 +213,22 @@ export default ({ setIsNextRound, isNextRound }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex bg-white/0">
+    <div className="flex h-full bg-white/10">
       <Box
         sx={{
           // bgcolor: "#cfe8fc",
-          height: "95vh",
           flex: 1,
           display: "flex",
-          justifyContent: "center",
+          // justifyContent: "center",
           flexDirection: "column",
           // paddingTop: "10rem",
           alignItems: "center",
           // alignItems: "end",
         }}
       >
-        <Box sx={{ height: "90vh" }}>
+        <Box sx={{ flex:1,  }}>
           <div>
-            <h1 className="bg-background  text-2xl mt-2 border-white/50 border-[1px]  mx-3 px-5 text-white py-8 text-center rounded shadow-lg">
+            <h1 className="bg-background w-full text-2xl mt-2 border-white/50 border-[1px]  px-5 text-white py-8 text-center rounded shadow-lg">
               Wer wurde erschossen?{" "}
             </h1>
             <Box

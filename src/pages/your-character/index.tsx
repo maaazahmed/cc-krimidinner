@@ -27,6 +27,7 @@ import * as Yup from "yup";
 import { timeNowInSec } from "@/utils";
 import { setLogDoc } from "@/firebase/logs";
 import CharacterImage from "@/assets/app-charcter.png";
+import CharacterImage2 from "@/assets/app-charcter02.png";
 import DifficultyUnfilled from "@/assets/DifficultyUnfilled.png";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -58,36 +59,32 @@ export const YourCharacter: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-2 flex flex-col items-center">
-      <h1 className="bg-background  text-2xl  mx-3 px-5 text-white py-8 text-center rounded shadow-lg">
+    <div className="p-2 flex h-full flex-col items-center">
+      <h1 className="bg-background w-[100%] text-2xl  px-5 text-white py-8 text-center rounded shadow-lg">
         Dein Charakter{" "}
       </h1>
-      <div className="mt-20 px-5 w-full flex flex-col justify-center items-center">
+      <div className="mt-20 px-5 w-full flex-1 flex flex-col justify-center items-center">
         {/* <SimpleSwiper /> */}
+        <div className={"flex-1"} >
         <SimpleCarousel />
+        </div>
 
         <div className="flex w-full items-center justify-center">
           {" "}
           {/* Added justify-center */}
-          <div className="text-center flex border-red-50 w-1/2  justify-between mt-8">
+          
+          <div className="text-center border-red-50 w-1/2  mt-12 ">
             <Button
               onClick={() => {
-                navigate(AppRoutes.setup);
+                navigate(AppRoutes.characters_profile);
               }}
-              variant="text"
-              className="disabled:cursor-not-allowed uppercase"
+              variant="outlined"
+              className="disabled:cursor-not-allowed uppercase border-stone-600	"
               type="button"
             >
               ZUrück
             </Button>
-            <Button
-              variant="text"
-              className="disabled:cursor-not-allowed"
-              // disabled={!isValid || isSubmitting}
-              type="submit"
-            >
-              WEITER
-            </Button>
+          
           </div>
         </div>
       </div>
@@ -210,12 +207,12 @@ function SimpleCarousel() {
               {/* <h1 className="p-4 mt-6 bg-primary font-roboto text-3xl leading-6 text-center tracking-tight">
                 Luigi Bastoni
               </h1> */}
-              <img src={CharacterImage} className={"h-[140px] w-[140px]"} alt="" />
+              <img src={CharacterImage2} className={"h-[140px] w-[140px]"} alt="" />
               <div className="flex flex-col w-full justify-center items-center">
-                <h1 className="font-roboto text-[#F24B59] font-medium text-[20px] mt-2 leading-6 text-center tracking-tighter">
-                  Schwierigkeit
+                <h1 className="font-roboto text-[#F24B59] font-medium text-[20px] font-[500] mt-2 leading-6 text-center tracking-[1px]">
+                Luigi Bastoni
                 </h1>
-                <div className="font-roboto text-[14px] mt-5 h-36 font-normal text-base leading-5 text-center tracking-wider text-onSurface-highEmphasis">
+                <div className="font-roboto text-[14px] mt-5 h-36 font-normal leading-5 text-center tracking-wider text-onSurface-highEmphasis">
                   Bruder des Dons und ewiger Zweiter. Alternder Playboy, der
                   gerne das Geld ausgibt, das er nie verdient hat. Liebt
                   schnelle Autos.

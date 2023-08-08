@@ -74,16 +74,16 @@ const AlertBox = ({ img, title, text }) => {
   const classes = useStyles();
 
   return (
-    <Card sx={{ backgroundColor: "#292929", width:"309px", height:"327px" }} className={classes.card}>
+    <Card sx={{ backgroundColor: "#292929", width:"332px", height:"371px" }} className={classes.card}>
       <CardContent>
         <Typography
           sx={{
             fontSize: 20,
             fontFamily: "Roboto",
-            fontWeight: "400",
+            fontWeight: "500",
             color: "#fff",
             padding: "0 10px",
-
+            letterSpacing:"0.15px"
           }}
           color="text.secondary"
           gutterBottom
@@ -108,11 +108,11 @@ export const FamilyDinner: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-2 flex flex-col items-center">
-      <h1 className="bg-background  text-sm uppercase  mx-3 px-5 text-white py-8 text-center rounded shadow-lg">
+    <div className="p-2 flex flex-col h-full items-center">
+      <h1 className="bg-background w-full  text-[10px] uppercase tracking-[0.2em] mx-0 px-5 text-white py-8 text-center rounded shadow-lg">
         Einladung zu einem Abendessen im kleinsten Kreise der Familie{" "}
       </h1>
-      <div className="mt-20 pt-10 px-5 w-full h-[65vh] flex flex-col mx-3 bg-white/0 justify-center items-center relative ">
+      <div className="mt-20 pt-10 flex-1 px-5 w-full flex flex-col mx-3 bg-white/0 justify-center items-center relative ">
         <div className={"flex-1"}>
           <AlertBox
             img={REZEPTE}
@@ -120,12 +120,13 @@ export const FamilyDinner: React.FC = () => {
             text={"Mörderisch-gute Rezeptvorschläge"}
           />
         </div>
-        <div className="flex w-full items-center justify-center  ">
+        <div className="flex w-full items-center justify-center mb-5  ">
             <Button
-              variant="text"
-              className="disabled:cursor-not-allowed"
+              variant="outlined"
+              className="disabled:cursor-not-allowed border-white/10"
               // disabled={!isValid || isSubmitting}
               type="submit"
+              onClick={()=> navigate(AppRoutes.your_character)}
             >
               WEITER
             </Button>

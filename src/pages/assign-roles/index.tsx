@@ -58,13 +58,16 @@ export const AssignRoles: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-2 flex flex-col items-center">
+    <div className="p-2 flex flex-col h-full items-center">
       <h1 className="bg-background  text-2xl  mx-3 px-5 text-white py-8 text-center rounded shadow-lg">
         Weise die Spieler ihren Charakter zu
       </h1>
-      <div className="mt-20 px-5 w-full flex flex-col justify-center items-center">
+      <div className="mt-20 px-5 bg-[reds] flex-1 w-full flex flex-col justify-center items-center">
         {/* <SimpleSwiper /> */}
+<Box sx={{flex:1}} >
+
         <SimpleCarousel />
+        </Box>
         {/* <div className="space-y-8 w-4/5 flex flex-col justify-center items-center">
           <div className="flex flex-col px-8 w-full items-center justify-center py-4 px-8 bg-background shadow-xl rounded-md">
             <CharacterImage />
@@ -91,8 +94,6 @@ export const AssignRoles: React.FC = () => {
           </div>
         </div> */}
         <div className="flex w-full items-center justify-center">
-          {" "}
-          {/* Added justify-center */}
           <div className="text-center flex border-red-50 w-1/2  justify-between mt-8">
             <Button
               onClick={() => {
@@ -351,17 +352,7 @@ function SimpleCarousel() {
           variant="outlined"
           className="rounded-md"
         >
-          {/* <AspectRatio ratio="1" sx={{ minWidth: 60 }}>
-            <img
-              src={`${item.src}?h=120&fit=crop&auto=format`}
-              srcSet={`${item.src}?h=120&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.title}
-            />
-          </AspectRatio>
-          <Box sx={{ whiteSpace: 'nowrap', mx: 1 }}>
-            <Typography level="title-md">{item.title}</Typography>
-            <Typography level="body-sm">{item.description}</Typography>
-          </Box> */}
+         
           <div className="space-y-8 w-full flex flex-col  justify-center items-center">
             <div className="flex flex-col px-8 w-full items-center justify-center py-4 px-8 bg-background shadow-xl rounded-md">
               <CharacterImage />

@@ -152,7 +152,7 @@ export const Invites: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-2 flex flex-col items-center min-h-[95vh]">
+    <div className="p-2 flex flex-col items-center h-full">
       <h1 className="bg-background  text-2xl w-[100%]  mx-3 px-5 text-white py-8 text-center rounded shadow-lg">
         Verschicke die Einlandungen
       </h1>

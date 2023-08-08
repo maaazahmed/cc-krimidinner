@@ -17,5 +17,8 @@ export const AppRoutes = {
   characters:"/characters",
   characters_2:"/characters-2",
   family_dinner:"family-dinner",
-  your_character:"your-character"
+  your_character:"/your-character",
+  characters_profile:"/character-profile",
+  test_page:"/test-page",
+  invite_page:"/invite-page"
 } as const;

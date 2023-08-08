@@ -30,7 +30,7 @@ export const GameRating: React.FC = () => {
   const [value, setValue] = React.useState<number | null>(2);
 const navigate = useNavigate()
   return (
-    <div className="p-2 bg-[#fff]/10 h-[95vh] flex flex-col items-center">
+    <div className="p-2 bg-[#fff]/10 h-full flex flex-col items-center">
       <Box
         sx={{
           pt: "7rem",

@@ -19,6 +19,9 @@ import {
   Characters2,
   FamilyDinner,
   YourCharacter,
+  CharactersProfile,
+  TestPage,
+  InviteScreen
 } from "@/pages";
 import { AppRoutes } from "@/constants/app-routes";
 import { AddPlayers } from "@/pages/add-players";
@@ -98,6 +101,18 @@ export const router = createBrowserRouter([
       {
         path: AppRoutes.your_character,
         element: <YourCharacter />,
+      },
+      {
+        path: AppRoutes.characters_profile,
+        element: <CharactersProfile />,
+      },
+      {
+        path: AppRoutes.test_page,
+        element: <TestPage />,
+      },
+      {
+        path: AppRoutes.invite_page,
+        element: <InviteScreen />,
       },
     ],
   },

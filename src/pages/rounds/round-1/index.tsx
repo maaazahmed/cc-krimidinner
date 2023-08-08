@@ -34,6 +34,7 @@ import Stack from "@mui/material/Stack";
 import Slider from "@mui/material/Slider";
 import VolumeDown from "@mui/icons-material/VolumeDown";
 import VolumeUp from "@mui/icons-material/VolumeUp";
+import { GiKnifeFork } from "react-icons/gi";
 
 import AudioPlayerCard from "./step-1";
 import StepTow from "./step-2";
@@ -120,7 +121,7 @@ export const RoundOne: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-2 flex flex-col items-center">
+    <div className="p-2 flex flex-col h-full items-center">
       <div className="bg-background w-[100%] flex flex-col justify-between  mx-3 px-5 text-white py-5   text-center rounded shadow-lg">
         <h1 className={"text-[24px] font-[400] "}>RUNDE 1</h1>
         <div
@@ -146,7 +147,7 @@ export const RoundOne: React.FC = () => {
               roundStap == 3 ? "text-[#f24b59]" : "text-[white]"
             }`}
           />
-          <MdSearch
+          <GiKnifeFork
             onClick={() => setRoundStap(4)}
             className={`text-[24px] ${
               roundStap == 4 ? "text-[#f24b59]" : "text-[white]"
@@ -161,13 +162,13 @@ export const RoundOne: React.FC = () => {
         </div>
       </div>
 
-      <Container>
         <Box
           sx={{
             // bgcolor: "#cfe8fc",
             flexDirection: "column",
-            height: "80vh",
+            // height: "80vh",
             display: "flex",
+            flex:1,
             justifyContent: "center",
             // paddingTop: "10rem",
             alignItems: "center",
@@ -190,32 +191,46 @@ export const RoundOne: React.FC = () => {
             <StepThree /> */}
           </div>
           <div className="flex w-full items-center justify-center ">
-            <div className="text-center flex border-red-50 w-1/2  justify-between mt-8">
-              <Button
-                onClick={() => {
-                  navigate(AppRoutes.setup);
-                }}
-                variant="text"
-                className="disabled:cursor-not-allowed uppercase"
-                type="button"
-              >
-                ZUrück
-              </Button>
-              <Button
-                onClick={() => {
-                  navigate(AppRoutes.round_2);
-                }}
-                variant="text"
-                className="disabled:cursor-not-allowed"
-                // disabled={!isValid || isSubmitting}
-                type="submit"
-              >
-                WEITER
-              </Button>
-            </div>
+            {roundStap == 1 ? (
+              <div className="text-center border-red-50 w-1/2  mt-12 ">
+                <Button
+                  onClick={() => {
+                    setRoundStap(2);
+                  }}
+                  variant="outlined"
+                  className="disabled:cursor-not-allowed uppercase border-stone-600	"
+                  type="button"
+                >
+                  WEITER
+                </Button>
+              </div>
+            ) : (
+              <div className="text-center flex border-red-50 w-1/2  justify-between mt-8">
+                <Button
+                  onClick={() => {
+                    // navigate(AppRoutes.setup);
+                  }}
+                  variant="text"
+                  className="disabled:cursor-not-allowed uppercase"
+                  type="button"
+                >
+                  ZUrück
+                </Button>
+                <Button
+                  onClick={() => {
+                    navigate(AppRoutes.round_2);
+                  }}
+                  variant="text"
+                  className="disabled:cursor-not-allowed"
+                  // disabled={!isValid || isSubmitting}
+                  type="submit"
+                >
+                  WEITER
+                </Button>
+              </div>
+            )}
           </div>
         </Box>
-      </Container>
     </div>
   );
 };

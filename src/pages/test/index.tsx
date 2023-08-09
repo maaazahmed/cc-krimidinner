@@ -246,7 +246,7 @@ function FullWidthTabs() {
         <TabPanel value={value} index={0} dir={theme.direction}>
           <Box
             sx={{
-              height: "290px",
+              height: "420px",
               textAlign: "center",
               // background: "blue",
               width: "289px",
@@ -256,6 +256,7 @@ function FullWidthTabs() {
               flexDirection: "column",
               justifyContent: "space-between",
               padding: 0,
+              flex:1,
             }}
           >
             <Typography
@@ -263,7 +264,7 @@ function FullWidthTabs() {
                 fontSize: "14px",
                 fontWeight: 400,
                 color: "rgba(255,255,255, 0.9)",
-                marginTop: "5rem",
+                marginTop: "10rem",
               }}
             >
               Bruder des Dons und ewiger Zweiter. Alternder Playboy, der gerne

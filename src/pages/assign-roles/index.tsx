@@ -26,7 +26,8 @@ import {
 import * as Yup from "yup";
 import { timeNowInSec } from "@/utils";
 import { setLogDoc } from "@/firebase/logs";
-import CharacterImage from "@/assets/CharacterImage";
+// import CharacterImage from "@/assets/CharacterImage";
+import CharacterImage from "@/assets/app-charcter.png";
 import DifficultyUnfilled from "@/assets/DifficultyUnfilled.png";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -62,37 +63,11 @@ export const AssignRoles: React.FC = () => {
       <h1 className="bg-background  text-2xl  mx-3 px-5 text-white py-8 text-center rounded shadow-lg">
         Weise die Spieler ihren Charakter zu
       </h1>
-      <div className="mt-20 px-5 bg-[reds] flex-1 w-full flex flex-col justify-center items-center">
+      <div className="mt-20 px-0 bg-[reds] flex-1 w-full flex flex-col ">
         {/* <SimpleSwiper /> */}
-<Box sx={{flex:1}} >
-
-        <SimpleCarousel />
+        <Box sx={{ flex: 1, width:"100%", background:"resd" }}>
+          <SimpleCarousel />
         </Box>
-        {/* <div className="space-y-8 w-4/5 flex flex-col justify-center items-center">
-          <div className="flex flex-col px-8 w-full items-center justify-center py-4 px-8 bg-background shadow-xl rounded-md">
-            <CharacterImage />
-            <h1 className="p-4 mt-6 bg-primary font-roboto text-3xl leading-6 text-center tracking-tight">
-              Luigi Bastoni
-            </h1>
-            <div className="flex flex-col w-full justify-center items-center">
-              <div className="flex w-12 mt-5 pb-2 justify-between">
-                <img src={DifficultyFill} alt="s" />
-                <img src={DifficultyFill} alt="s" />
-                <img src={DifficultyUnfilled} alt="s" />
-                <img src={DifficultyUnfilled} alt="s" />
-                <img src={DifficultyUnfilled} alt="s" />
-              </div>
-              <h1 className="font-roboto text-onSurface-highEmphasis font-medium text-xl leading-6 text-center tracking-tighter">
-                Schwierigkeit
-              </h1>
-              <div className="font-roboto mt-5 h-36 font-normal text-base leading-5 text-center tracking-wider text-onSurface-highEmphasis">
-                Bruder des Dons und ewiger Zweiter. Alternder Playboy, der gerne
-                das Geld ausgibt, das er nie verdient hat. Liebt schnelle Autos.
-              </div>
-              <SimpleSelect />
-            </div>
-          </div>
-        </div> */}
         <div className="flex w-full items-center justify-center">
           <div className="text-center flex border-red-50 w-1/2  justify-between mt-8">
             <Button
@@ -106,9 +81,9 @@ export const AssignRoles: React.FC = () => {
               ZUrück
             </Button>
             <Button
-             onClick={() => {
-              navigate(AppRoutes.invites);
-            }}
+              onClick={() => {
+                navigate(AppRoutes.invites);
+              }}
               variant="text"
               className="disabled:cursor-not-allowed"
               // disabled={!isValid || isSubmitting}
@@ -172,44 +147,6 @@ function SimpleSelect() {
 
   return (
     <div>
-      {/* <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel ref={inputLabel} id="demo-simple-select-outlined-label">
-          Guest Name
-        </InputLabel>
-        <Select
-          labinfitarelId="demo-simple-select-outlined-label"
-          id="demo-simple-select-outlined"
-          value={age}
-          onChange={handleChange}
-          labelWidth={labelWidth}
-          MenuProps={{
-            anchorOrigin: {
-              vertical: "bottom",
-              horizontal: "left",
-            },
-            getContentAnchorEl: null,
-            PaperProps: {
-              style: {
-                backgroundColor: "#292929",
-              },
-            },
-            variant: "menu",
-          }}
-        >
-          {lists.map((item) => (
-            <MenuItem
-              key={item}
-              value={item}
-              style={{
-                color: "white",
-                cursor: "pointer",
-              }}
-            >
-              {item}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl> */}
       <FormControl variant="outlined" className={classes.formControl}>
         <Select
           color="#000"
@@ -230,60 +167,6 @@ function SimpleSelect() {
     </div>
   );
 }
-
-// function SimpleSwiper() {
-//   return (
-//     <>
-//       <Swiper
-//         slidesPerView={3}
-//         spaceBetween={30}
-//         pagination={{
-//           clickable: true,
-//         }}
-//         modules={[Pagination]}
-//         className="mySwiper bg-slate-400 w-[100%]"
-//       >
-//         <SwiperSlide className="bg-slate-600" >
-//           <div className="space-y-8 w-4/5 flex flex-col justify-center items-center">
-//             <div className="flex flex-col px-8 w-full items-center justify-center py-4 px-8 bg-background shadow-xl rounded-md">
-//               <CharacterImage />
-//               <h1 className="p-4 mt-6 bg-primary font-roboto text-3xl leading-6 text-center tracking-tight">
-//                 Luigi Bastoni
-//               </h1>
-//               <div className="flex flex-col w-full justify-center items-center">
-//                 <div className="flex w-12 mt-5 pb-2 justify-between">
-//                   <img src={DifficultyFill} alt="s" />
-//                   <img src={DifficultyFill} alt="s" />
-//                   <img src={DifficultyUnfilled} alt="s" />
-//                   <img src={DifficultyUnfilled} alt="s" />
-//                   <img src={DifficultyUnfilled} alt="s" />
-//                 </div>
-//                 <h1 className="font-roboto text-onSurface-highEmphasis font-medium text-xl leading-6 text-center tracking-tighter">
-//                   Schwierigkeit
-//                 </h1>
-//                 <div className="font-roboto mt-5 h-36 font-normal text-base leading-5 text-center tracking-wider text-onSurface-highEmphasis">
-//                   Bruder des Dons und ewiger Zweiter. Alternder Playboy, der
-//                   gerne das Geld ausgibt, das er nie verdient hat. Liebt
-//                   schnelle Autos.
-//                 </div>
-//                 <SimpleSelect />
-//               </div>
-//             </div>
-//           </div>
-//         </SwiperSlide>
-
-//         {/* <SwiperSlide>Slide 2</SwiperSlide>
-//         <SwiperSlide>Slide 3</SwiperSlide>
-//         <SwiperSlide>Slide 4</SwiperSlide>
-//         <SwiperSlide>Slide 5</SwiperSlide>
-//         <SwiperSlide>Slide 6</SwiperSlide>
-//         <SwiperSlide>Slide 7</SwiperSlide>
-//         <SwiperSlide>Slide 8</SwiperSlide>
-//         <SwiperSlide>Slide 9</SwiperSlide> */}
-//       </Swiper>
-//     </>
-//   );
-// }
 
 function SimpleCarousel() {
   const data = [
@@ -320,14 +203,13 @@ function SimpleCarousel() {
   ];
   return (
     <Box
-      md={{}}
       sx={{
         display: "flex",
-
+        // background: "blue",
         gap: 2,
         py: 1,
         overflow: "auto",
-        width: 400,
+        width:"100%",
         padding: 0,
         border: 0,
         borderColor: "transparent",
@@ -341,10 +223,11 @@ function SimpleCarousel() {
       {data.map((item) => (
         <Card
           orientation="horizontal"
-          size="sm"
+          // size="sm"
           sx={{
             padding: 0,
             border: 0,
+            // height:"519px",
             borderRadius: 7,
             backgroundColor: "transparent",
           }}
@@ -354,8 +237,9 @@ function SimpleCarousel() {
         >
          
           <div className="space-y-8 w-full flex flex-col  justify-center items-center">
-            <div className="flex flex-col px-8 w-full items-center justify-center py-4 px-8 bg-background shadow-xl rounded-md">
-              <CharacterImage />
+            <div className="flex flex-col px-8 w-full items-center justify-center  bg-background shadow-xl rounded-md">
+              {/* <CharacterImage /> */}
+              <img src={CharacterImage} className={"w-[168px] w-[165.67px]"} alt="" />
               <h1 className="px-5 py-[6px] mt-6 bg-primary font-roboto text-[20px] font-[500] leading-6 text-center tracking-tight">
                 Luigi Bastoni
               </h1>

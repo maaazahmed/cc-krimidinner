@@ -15,6 +15,8 @@ import Card from "@mui/joy/Card";
 import man_1 from "@/assets/man1.png";
 import man_2 from "@/assets/man2.png";
 import man_3 from "@/assets/man3.png";
+import { AppRoutes } from "@/constants/app-routes";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   ratingContainer: {
@@ -143,6 +145,7 @@ function CarouselRatio() {
 export const Characters: React.FC = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState<number | null>(2);
+  const navigate = useNavigate();
 
   return (
     <div className="p-2 bg-[#fff]10 min-h-[95vh] flex flex-col items-center">
@@ -272,7 +275,7 @@ export const Characters: React.FC = () => {
           ZURUCK
         </Button>
         <Button
-          // onClick={() => setIsNextRound(2)}
+          onClick={() => navigate(AppRoutes.your_character)}
           variant="text"
           className="disabled:cursor-not-allowed rounded-[4px]  "
           type="submit"

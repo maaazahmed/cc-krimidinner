@@ -2,6 +2,28 @@ import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppRoutes } from "@/constants/app-routes";
 import * as fbq from "@/meta";
+// import Slider from "../../components/slider/index.jsx";
+
+// export const SplashScreen: React.FC = () => {
+//   const navigate = useNavigate();
+
+//   // Emit a page view event to Meta Pixel
+//   useEffect(() => {
+//     fbq.pageView();
+//   }, []);
+
+//   useEffect(() => {
+//     // setTimeout(()=>{
+//     //     navigate(AppRoutes.home)
+//     //   },2000)
+//   }, []);
+
+//   return (
+//     <div className="">
+//       <Slider />
+//     </div>
+//   );
+// };
 
 export const SplashScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -11,15 +33,12 @@ export const SplashScreen: React.FC = () => {
     fbq.pageView();
   }, []);
 
-
   useEffect(() => {
     setTimeout(()=>{
         navigate(AppRoutes.home)
       },2000)
   }, []);
 
-
-  
   return (
     <div className="h-full flex flex-col">
       <div
@@ -58,7 +77,7 @@ export const SplashScreen: React.FC = () => {
         </div> */}
       </div>
 
-      {/* <div className="text-center text-onSurface-disabled bg-[#231D1D] py-2">
+      <div className="text-center text-onSurface-disabled bg-[#231D1D] py-2">
         <a
           href={"https://crime-cases.de/impressum"}
           target={"_blank"}
@@ -67,7 +86,7 @@ export const SplashScreen: React.FC = () => {
         >
           IMPRESSUM
         </a>
-      </div> */}
+      </div>
     </div>
   );
 };

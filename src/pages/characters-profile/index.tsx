@@ -277,32 +277,7 @@ function FullWidthTabs() {
             </Button>
           </Box>
         </TabPanel>
-        {/* <TabPanel value={value} index={1} dir={theme.direction}>
-          <Box sx={{ height: "312px", backgroundColor: "" }}>
-          <Typography
-              sx={{
-                fontSize: "14px",
-                fontWeight: 400,
-                color: "rgba(255,255,255, 0.9)",
-                marginTop:"5rem"
-              }}
-            >
-               „Wenn das Leben dir Zitronen gibt, mach Limoncello draus!”
-            </Typography>
-
-            <Button
-              // onClick={() => navigate(AppRoutes.review_amazom)}
-              variant="text"
-              className="disabled:cursor-not-allowed "
-              type="submit"
-            >
-              Zum Rollennheft
-            </Button>
-          </Box>
-        </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
-          <Box sx={{ height: "312px", backgroundColor: "" }}></Box>
-        </TabPanel> */}
+       
       </SwipeableViews>
     </Box>
   );

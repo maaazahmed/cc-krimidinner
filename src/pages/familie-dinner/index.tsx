@@ -126,7 +126,7 @@ export const FamilyDinner: React.FC = () => {
               className="disabled:cursor-not-allowed border-white/10"
               // disabled={!isValid || isSubmitting}
               type="submit"
-              onClick={()=> navigate(AppRoutes.your_character)}
+              onClick={()=> navigate(AppRoutes.characters)}
             >
               WEITER
             </Button>

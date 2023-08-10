@@ -16,6 +16,16 @@ const useStyles = makeStyles((theme) => ({
       color: "#f24b59",
       width: "100%",
     },
+    // .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root
+    "& .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root":{
+      color: "#f24b59",
+           
+    },
+    "& .label.Mui-active":{
+      color: "#f24b59",
+           
+    },
+
     "& .MuiInput-underline:after": {
       borderBottomColor: "#f24b59",
     },
@@ -29,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
       "&.Mui-focused fieldset": {
         borderColor: "#f24b59",
       },
+      // "MuiFormLabel-root MuiInputLabel-root":""
     },
   },
   selectEmpty: {

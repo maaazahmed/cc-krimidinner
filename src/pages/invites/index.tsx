@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useErrorStore } from "@/stores/error-store";
 import { useGameCode } from "@/hooks/game-code/use-game-code";
@@ -29,12 +29,12 @@ const useStyles = makeStyles((theme) => ({
       "justify-content": "center",
       "align-items": "center",
       "flex-direction": "column",
-      position:"relative",
+      position: "relative",
 
       "& .MuiBox-root": {
-        position:"absolute",
-        top:10,
-        right:10,
+        position: "absolute",
+        top: 10,
+        right: 10,
         width: "100%",
         display: "flex",
         "justify-content": "flex-end",
@@ -74,11 +74,21 @@ const useStyles = makeStyles((theme) => ({
 
 const InvitesCards = () => {
   const classes = useStyles();
+  const copyRef = useRef(null);
+  function myFunction(paramText:string) {
+    // Get the text field
+    // var copyRef = document.getElementById("myInput");
+  
+    // console.log(copyRef.current[1])
+    navigator.clipboard.writeText(paramText);
+    alert("Link Cpoied: " + paramText);
+  }
+
 
   return (
     <Card sx={{ backgroundColor: "#292929" }} className={classes.card}>
       <CardContent sx={{ "padding-bottom": 0 }}>
-        <Box >
+        <Box onClick={()=>myFunction("www.crimecases-dinner.de/einladung/luigi")} sx={{ cursor: "pointer" }}>
           <img src={COPY_ICON} alt="COPY_ICON" />
         </Box>
         <CharacterImage />
@@ -109,6 +119,7 @@ const InvitesCards = () => {
           Name Spieler
         </Typography>
         <Typography
+          ref={copyRef}
           sx={{
             fontSize: 12,
             fontFamily: "Roboto",
@@ -175,9 +186,9 @@ export const Invites: React.FC = () => {
               ZUrück
             </Button>
             <Button
-             onClick={() => {
-              navigate(AppRoutes.extras);
-            }}
+              onClick={() => {
+                navigate(AppRoutes.extras);
+              }}
               variant="text"
               className="disabled:cursor-not-allowed"
               // disabled={!isValid || isSubmitting}

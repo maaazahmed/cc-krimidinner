@@ -79,7 +79,7 @@ const navigate = useNavigate()
               height: "42px",
               alignItems: "center",
               fontSize: 42,
-              backgroundColor: "#2C2C2C",
+              // backgroundColor: "#2C2C2C",
               padding: "25px 10px",
               color:"#ac8aee"
             }}

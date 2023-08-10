@@ -185,7 +185,7 @@ function SimpleCarousel() {
         "::-webkit-scrollbar": { display: "none" },
       }}
     >
-      {data.map((item) => (
+      {data.map((item, i) => (
         <Card
           orientation="horizontal"
           size="sm"
@@ -218,8 +218,25 @@ function SimpleCarousel() {
                 justifyContent: "center",
               }}
             >
-              <Box aria-label="Icon 1" sx={{ width: "80px", height: "80px" }}>
+              <Box
+                aria-label="Icon 1"
+                sx={{ width: "80px", height: "80px", position: "relative" }}
+              >
                 <img src={slider_icons_search} alt="" />
+                <Box sx={{ position: "absolute",  background:"resd", width:"50px", height:"50px",top:"2px", left:"2px" }}>
+                  <Typography
+                    sx={{
+                      fontWeight: 400,
+                      fontSize: "34px",
+                      color: "#fff",
+                      textAlign:"center",
+                      fontFamily: "Roboto",
+                      // background:"red"
+                    }}
+                  >
+                    {i + 5}
+                  </Typography>
+                </Box>
               </Box>
               <Box
                 aria-label="Arrow Down Icon"
@@ -341,8 +358,11 @@ function SimpleCarousel() {
                     color: "#fff",
                     fontWeight: 400,
                   }}
-                > bekommt</Typography>{" "}
-                 Hinweis 5
+                >
+                  {" "}
+                  bekommt
+                </Typography>{" "}
+                Hinweis 5
               </Typography>
 
               {/* <Box aria-label="Icon 1" sx={{ mt: "1rem" }}>

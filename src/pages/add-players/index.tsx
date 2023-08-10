@@ -263,9 +263,9 @@ const InputGroup: React.FC<InputGroupProps> = ({
           "block w-full bg-background mt-5 text-onSurface p-4 rounded-t-md shadow-md text-base border-2 focus:outline-none",
           {
             "border-onSurface-mediumEmphasis": !hasError,
-            "border-primary": hasError,
+            "border-[#F24B59]": hasError,
             "placeholder-onSurface-mediumEmphasis": !hasError,
-            "placeholder-primary": hasError,
+            "placeholder-[#F24B59]": hasError,
           },
           className
         )}
